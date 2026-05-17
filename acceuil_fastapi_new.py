@@ -6,6 +6,7 @@ import pandas as pd
 import json
 import os
 import re
+import ollama
 import hashlib
 from datetime import datetime, timedelta
 from NLP import predict_credit, explain_credit, model
