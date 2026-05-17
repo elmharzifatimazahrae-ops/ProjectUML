@@ -1,2 +1,9 @@
+pandas
 fastapi
 uvicorn
+requests
+scikit-learn
+numpy
+jinja2
+python-multipart
+starlette
