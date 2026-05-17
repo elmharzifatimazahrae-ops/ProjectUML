@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Dashboard | Gestion des Crédits</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+<body data-page="dashboard">
+  <div class="dashboard-shell">
+
+    <main class="dashboard-main">
+      <header class="dashboard-header glass">
+        <div>
+          <p class="eyebrow">Bonjour, <span id="user-name">Utilisateur</span></p>
+          <h1>Bienvenue sur votre espace</h1>
+        </div>
+        <div class="header-meta">
+          <span class="badge">Utilisateur</span>
+          <button id="logout-top" class="button button-secondary">Se déconnecter</button>
+        </div>
+      </header>
+
+      <section class="dashboard-grid">
+        <div class="stat-card glass animate-fade-up">
+          <p>Total des demandes</p>
+          <h2 id="stat-total">0</h2>
+        </div>
+        <div class="stat-card glass animate-fade-up delay-1">
+          <p>Demandes en cours</p>
+          <h2 id="stat-pending">0</h2>
+        </div>
+        <div class="stat-card glass animate-fade-up delay-2">
+          <p>Dernier statut</p>
+          <h2 id="stat-status">Aucune</h2>
+        </div>
+      </section>
+
+      <section class="dashboard-content">
+        <div id="empty-state" class="glass info-card animate-fade-up">
+          <div class="empty-illustration">📋</div>
+          <h2>Pas de demande active</h2>
+          <p>Commencez dès maintenant en remplissant le formulaire ou en décrivant votre projet en texte libre.</p>
+        </div>
+
+        <div id="request-form-card" class="glass form-card animate-fade-up">
+          <div class="card-header">
+            <div>
+              <p class="eyebrow">Nouvelle demande</p>
+              <h2>Envoyer votre dossier</h2>
+            </div>
+          </div>
+          <form id="request-form" class="form-grid">
+              <label class="form-label">
+                Genre
+                <select name="Gender" required>
+                  <option value="Male">Homme</option>
+                  <option value="Female">Femme</option>
+                </select>
+              </label>
+              <label class="form-label">
+                Situation familiale
+                <select name="Married" required>
+                  <option value="Célibataire">Célibataire</option>
+                  <option value="Married">Marié(e)</option>
+                  <option value="Divorcé(e)">Divorcé(e)</option>
+                  <option value="Veuf/Veuve">Veuf/Veuve</option>
+                </select>
+              </label>
+              <label class="form-label">
+                Niveau d’éducation
+                <select name="Education" required>
+                  <option value="Graduate">Diplômé</option>
+                  <option value="Not Graduate">Non diplômé</option>
+                </select>
+              </label>
+              <label class="form-label">
+                Self-employed
+                <select name="Self_Employed" required>
+                  <option value="Yes">Oui</option>
+                  <option value="No">Non</option>
+                </select>
+              </label>
+              <label class="form-label">
+                Salaire mensuel net
+                <input type="number" name="ApplicantIncome" min="0" step="100" placeholder="5000" required />
+              </label>
+              <label class="form-label">
+                Montant du crédit demandé
+                <input type="number" name="LoanAmount" min="0" step="100" placeholder="25000" required />
+              </label>
+              <label class="form-label">
+                Durée de remboursement (en mois)
+                <input type="number" name="Loan_Amount_Term" min="12" max="480" step="12" placeholder="360" value="360" required />
+              </label>
+              <label class="form-label">
+                Historique de crédit
+                <select name="CreditHistory" required>
+                  <option value="1">Bon</option>
+                  <option value="0">Mauvais</option>
+                </select>
+              </label>
+              <label class="form-label full-width">
+                Description de la situation
+                <textarea name="note" rows="4" placeholder="Expliquez votre demande" ></textarea>
+              </label>
+              <button type="submit" class="button button-primary full-width">Soumettre la demande</button>
+          </form>
+        </div>
+
+        <div id="status-card" class="glass status-card animate-fade-up hidden">
+          <div class="card-header">
+            <div>
+              <p class="eyebrow">Suivi de votre dossier</p>
+              <h2>Statut actuel</h2>
+            </div>
+          </div>
+          <div class="progress-bar">
+            <span class="step completed">Soumis</span>
+            <span class="step" id="step-in-progress">En cours</span>
+            <span class="step" id="step-decision">Décision</span>
+            <span class="step" id="step-final">Finalisé</span>
+          </div>
+          <div class="status-badge" id="status-badge">Pré-acceptation</div>
+          <div class="status-summary" id="status-summary"></div>
+          <div id="defaults-warning" style="display:none;"></div>
+          <div class="rejection-card" id="rejection-card" style="display:none;">            <div class="rejection-header">
+              <span class="rejection-icon">⚠️</span>
+              <div>
+                <p class="eyebrow rejection-eyebrow">Demande non acceptée</p>
+                <h3>Raisons du refus</h3>
+              </div>
+            </div>
+            <div class="rejection-reasons" id="rejection-reasons"></div>
+            <div class="rejection-footer">
+            </div>
+          </div>
+          <div class="approved-contact" id="approved-contact" style="display:none;">
+            <div class="contact-header">
+              <p class="eyebrow contact-eyebrow">Prochaine étape</p>
+              <h3>Finaliser votre demande</h3>
+            </div>
+            <form id="contact-form" class="form-grid contact-form">
+              <label class="form-label">
+                Agence préférée
+                <select name="agency" required>
+                  <option value="">Sélectionnez une agence</option>
+                  <option value="Alger Centre">Alger Centre</option>
+                  <option value="Oran Ouest">Oran Ouest</option>
+                  <option value="Constantine Est">Constantine Est</option>
+                  <option value="Annaba Nord">Annaba Nord</option>
+                </select>
+              </label>
+              <label class="form-label">
+                Numéro de téléphone
+                <input type="tel" name="phone" placeholder="0555 123 456" required />
+              </label>
+              <button type="submit" class="button button-primary full-width">Envoyer ma demande de contact</button>
+            </form>
+            <div id="contact-confirmation" style="display:none;" class="confirmation-message">
+              <p>✅ Votre demande de contact a été transmise. En attente de confirmation de l'agence.</p>
+            </div>
+          </div>          <div class="appointment-card" id="appointment-card" style="display:none;">
+            <div class="appointment-header">
+              <span class="appointment-icon">📅</span>
+              <div>
+                <p class="eyebrow appointment-eyebrow">Rendez-vous confirmé</p>
+                <h3>Votre rendez-vous est prévu</h3>
+              </div>
+            </div>
+            <div class="appointment-details" id="appointment-details"></div>
+            <div class="appointment-footer">
+              <p>📄 Présentez-vous avec vos pièces justificatives.</p>
+            </div>
+          </div>          <div class="request-summary glass-inner">
+            <h3>Résumé de la demande</h3>
+            <div class="summary-grid" id="summary-grid"></div>
+          </div>
+        </div>
+      </section>
+    </main>
+  </div>
+
+  <div class="toast" id="toast"></div>
+  <script src="js/main.js"></script>
+</body>
+</html>

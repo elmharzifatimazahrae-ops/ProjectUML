@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Inscription | Gestion des Crédits</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+<body data-page="inscription">
+  <div class="page-shell page-centered">
+    <div class="auth-card glass animate-fade-up">
+      <div class="card-header">
+        <div>
+          <p class="eyebrow">Créer un compte</p>
+          <h1>Inscription</h1>
+          <p class="card-subtitle">Rejoignez votre espace crédit en quelques instants.</p>
+        </div>
+      </div>
+      <form id="signup-form" class="form-grid">
+        <label class="form-label">
+          Nom
+          <input type="text" name="name" placeholder="Votre nom" required />
+        </label>
+        <label class="form-label">
+          Prénom
+          <input type="text" name="firstName" placeholder="Votre prénom" required />
+        </label>
+        <label class="form-label">
+          Email
+          <input type="email" name="email" placeholder="exemple@gmail.com" required />
+        </label>
+        <label class="form-label">
+          Mot de passe
+          <input type="password" name="password" placeholder="••••••••" required />
+        </label>
+        <label class="form-label">
+          Confirmer le mot de passe
+          <input type="password" name="confirmPassword" placeholder="••••••••" required />
+        </label>
+        <button type="submit" class="button button-primary">S’inscrire</button>
+      </form>
+      <p class="auth-note">Déjà membre ? <a href="index.html">Se connecter</a></p>
+    </div>
+  </div>
+  <div class="toast" id="toast"></div>
+  <script src="js/main.js"></script>
+</body>
+</html>

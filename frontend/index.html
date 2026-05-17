@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Gestion des Crédits</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+<body data-page="index">
+  <div class="page-shell">
+    <header class="topbar glass">
+      <div class="brand">
+        <span class="brand-mark">G</span>
+        <div>
+          <p>Gestion des Crédits</p>
+          <small>Interface premium</small>
+        </div>
+      </div>
+    </header>
+
+    <main class="hero-section">
+      <div class="hero-copy animate-fade-up">
+        <p class="eyebrow">Bienvenue</p>
+        <h1>Gestion des Crédits</h1>
+        <p class="hero-subtitle">Gérez vos demandes de crédit simplement et en toute sécurité</p>
+        <div class="hero-actions">
+          <button id="open-login-cta" class="button button-glow">Connexion</button>
+          <a href="inscription.html" class="button button-outline">Inscription</a>
+        </div>
+      </div>
+      <div class="hero-visual animate-slide-in"></div>
+    </main>
+
+    <section class="ticker-wrap">
+      <div class="ticker glass">
+        <div class="ticker-track">
+          <span>Bienvenue sur votre espace crédit</span>
+          <span>Suivez l’avancement de votre dossier en temps réel</span>
+          <span>Des décisions rapides et transparentes</span>
+          <span>Bienvenue sur votre espace crédit</span>
+          <span>Suivez l’avancement de votre dossier en temps réel</span>
+        </div>
+      </div>
+    </section>
+  </div>
+
+  <div class="modal-overlay" id="login-modal">
+    <div class="modal-card glass animate-modal">
+      <button class="modal-close" id="close-login">×</button>
+      <div class="modal-header">
+        <p class="eyebrow">Espace sécurisé</p>
+        <h2>Connexion</h2>
+      </div>
+      <form id="login-form" class="form-grid">
+        <label class="form-label">
+          Email
+          <input type="email" name="email" placeholder="admin@gmail.com" required />
+        </label>
+        <label class="form-label">
+          Mot de passe
+          <input type="password" name="password" placeholder="••••••••" required />
+        </label>
+        <button type="submit" class="button button-primary">Se connecter</button>
+      </form>
+      <p class="modal-footer">Pas encore de compte ? <a href="inscription.html">S’inscrire</a></p>
+    </div>
+  </div>
+
+  <div class="toast" id="toast"></div>
+  <script src="js/main.js"></script>
+</body>
+</html>

@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Admin | Gestion des Crédits</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+<body data-page="admin">
+  <div class="dashboard-shell">
+
+    <main class="dashboard-main">
+      <header class="dashboard-header glass">
+        <div>
+          <p class="eyebrow">Bonjour, <span id="admin-name">Admin</span></p>
+          <h1>Tableau de bord administratif</h1>
+        </div>
+        <div class="header-meta">
+          <span class="badge badge-admin">Admin</span>
+          <button id="logout-top" class="button button-secondary">Se déconnecter</button>
+        </div>
+      </header>
+
+      <section class="dashboard-grid admin-grid">
+        <div class="stat-card glass animate-fade-up">
+          <p>Demandes totales</p>
+          <h2 id="admin-total">0</h2>
+        </div>
+        <div class="stat-card glass animate-fade-up delay-1">
+          <p>En attente</p>
+          <h2 id="admin-pending">0</h2>
+        </div>
+        <div class="stat-card glass animate-fade-up delay-2">
+          <p>Acceptées</p>
+          <h2 id="admin-accepted">0</h2>
+        </div>
+        <div class="stat-card glass animate-fade-up delay-3">
+          <p>Finalisées</p>
+          <h2 id="admin-finalized">0</h2>
+        </div>
+        <div class="stat-card glass animate-fade-up delay-4">
+          <p>Refusées</p>
+          <h2 id="admin-refused">0</h2>
+        </div>
+      </section>
+
+      <section class="admin-panel glass animate-fade-up">
+        <div class="panel-header">
+          <div>
+            <p class="eyebrow">Demandes récentes</p>
+            <h2>Liste des dossiers</h2>
+          </div>
+          <div class="filter-row">
+            <select id="filter-status">
+              <option value="all">Tous les statuts</option>
+              <option value="Pré-acceptation">Pré-acceptation</option>
+              <option value="Accepté">Accepté</option>
+              <option value="Finalisé">Finalisé</option>
+              <option value="Refusé">Refusé</option>
+            </select>
+            <button id="refresh-admin" class="button button-secondary">Actualiser</button>
+          </div>
+        </div>
+        <div class="table-wrap" id="admin-table"></div>
+      </section>
+    </main>
+  </div>
+
+  <div class="modal-overlay" id="detail-modal">
+    <div class="modal-card glass animate-modal detail-modal-card">
+      <button class="modal-close" id="detail-close">×</button>
+      <div class="card-header">
+        <div>
+          <p class="eyebrow" id="detail-eyebrow">Dossier utilisateur</p>
+          <h2 id="detail-title">Détails du dossier</h2>
+        </div>
+      </div>
+      <div class="detail-body">
+        <div class="detail-summary" id="detail-info"></div>
+        <div id="chart-zone"></div>
+      </div>
+    </div>
+  </div>
+
+  <div class="toast" id="toast"></div>
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+  <script src="js/main.js"></script>
+</body>
+</html>

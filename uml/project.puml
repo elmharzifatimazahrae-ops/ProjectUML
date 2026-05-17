@@ -1,0 +1,29 @@
+@startuml
+title Projet Python2026 - Diagramme de classes (esquisse)
+
+class Acceuil {
+  +start()
+  +handle_request()
+}
+
+class NLP {
+  +process_text(text)
+  -load_model()
+}
+
+class Server {
+  +run()
+  +stop()
+}
+
+class TestAPI {
+  +test_endpoints()
+}
+
+Acceuil --> NLP : utilise
+Server --> Acceuil : route vers
+TestAPI --> Server : teste
+
+note "Adaptez ce diagramme selon votre code" as N
+
+@enduml

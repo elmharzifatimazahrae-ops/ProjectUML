@@ -1,0 +1,56 @@
+[
+  {
+    "name": "Admin",
+    "email": "admin@gmail.com",
+    "password": "240be518fabd2724ddb6f04eeb1da5967448d7e831c08c8fa822809f74c720a9",
+    "role": "admin"
+  },
+  {
+    "name": "FATIMA EL MHARZI",
+    "email": "fati@gmail.com",
+    "password": "a665a45920422f9d417e4867efdc4fb8a04a1f3fff1fa07e998e86f7f7a27ae3",
+    "role": "user"
+  },
+  {
+    "name": "Test User",
+    "email": "test@example.com",
+    "password": "ecd71870d1963316a97e3ac3408c9835ad8cf0f3c1bc703527c30265534f75ae",
+    "role": "user"
+  },
+  {
+    "name": "aya aya",
+    "email": "aya@gmail.com",
+    "password": "9834876dcfb05cb167a5c24953eba58c4ac89b1adf57f28f2f9d09af107ee8f0",
+    "role": "user"
+  },
+  {
+    "name": "ala ala",
+    "email": "ala@gmail.com",
+    "password": "30cf5991d7d1191944d38fa310529b20694372cb09bad36376c7355bda922648",
+    "role": "user"
+  },
+  {
+    "name": "li li",
+    "email": "li@gmail.com",
+    "password": "caa22ef5a129da7f1dd3c44e732ddc9cbe141c2f45428590ef8a2ddf12562d55",
+    "role": "user"
+  },
+  {
+    "name": "ya ya",
+    "email": "ya@gmail.com",
+    "password": "f2afd1cacb5441a5e65a7a460a5f9898b7b98b08aa6323a2e53c8b9a9686cd86",
+    "role": "user"
+  },
+  {
+    "name": "na na",
+    "email": "na@gmail.com",
+    "password": "3d9fc4bde7ceef058d65b00186e79c1f14b42687b491644c303065135b644e18",
+    "role": "user"
+  },
+  {
+    "name": "lala lala",
+    "email": "lala@gmail.com",
+    "password": "494414ded24da13c451b13b424928821351c78fce49f93d9e1b55f102790c206",
+    "role": "user"
+  }
+]
