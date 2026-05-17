@@ -8,7 +8,6 @@ import os
 import re
 import hashlib
 from datetime import datetime, timedelta
-import ollama
 from NLP import predict_credit, explain_credit, model
 
 # Change working directory to script location
