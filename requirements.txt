@@ -1,3 +1,9 @@
+shap
+xgboost
+lightgbm
+catboost
+scipy
+tqdm
 pandas
 fastapi
 uvicorn
