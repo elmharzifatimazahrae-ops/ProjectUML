@@ -1,6 +1,6 @@
 // ── 1. STATE MANAGEMENT ──────────────────────────────────────
 const STORAGE_KEY = 'creditAppState';
-const API = 'http://localhost:8003';
+const API = 'https://projectuml-production-91b2.up.railway.app';
 
 const DEFAULTS = {
   users: [
