@@ -8,3 +8,17 @@ jinja2
 python-multipart
 starlette
 ollama
+matplotlib
+seaborn
+openpyxl
+xlrd
+joblib
+httpx
+aiofiles
+python-dotenv
+beautifulsoup4
+lxml
+sqlalchemy
+psycopg2-binary
+gunicorn
+pytest
